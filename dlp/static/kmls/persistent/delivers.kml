@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+	<Document id="delivers">
+        <NetworkLink>
+			<Name>Package.kml</Name>
+			<Link>
+				<href>http://10.160.101.132:8000/static/kmls/delivers/Package.kml</href>
+				<refreshMode>onInterval</refreshMode>
+			</Link>
+		</NetworkLink>
+        <NetworkLink>
+			<Name>Transport.kml</Name>
+			<Link>
+				<href>http://10.160.101.132:8000/static/kmls/delivers/Transport.kml</href>
+				<refreshMode>onInterval</refreshMode>
+			</Link>
+		</NetworkLink>
+
+    </Document>
+</kml>

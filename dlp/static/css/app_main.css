@@ -3,10 +3,21 @@
     margin: 0;
 }
 
-html, body, #map_canvas {
-    height: 100%;
-    width: 100%;
-    margin: 0px;
+/*#map_canvas {*/
+/*height: 100%;*/
+/*width: 100%;*/
+/*margin: 0px;*/
+/*}*/
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    /*-webkit-transform: translate3d(0, 0, 0) !important;*/
+}
+
+main {
+    flex: 1 0 auto;
 }
 
 #map_canvas {
@@ -70,9 +81,9 @@ html, body, #map_canvas {
     height: 2.825rem;
     position: relative;
     padding: 0 1rem 0 1rem !important;
-    .title-bar.dark{
-        padding: 0 1rem 0 1rem !important;
-    }
+.title-bar.dark{
+    padding: 0 1rem 0 1rem !important;
+}
 }
 
 .logo-image{
@@ -127,7 +138,7 @@ html, body, #map_canvas {
 }
 
 .image-logo{
-    max-width: 300px;
+    max-width: 100%;
 }
 
 #main-card{
@@ -138,7 +149,7 @@ html, body, #map_canvas {
     display: table-cell;
     vertical-align: middle;
     background-color: transparent;
-    padding: 10px;
+    /*padding: 10px;*/
     cursor: pointer;
 }
 
@@ -147,9 +158,12 @@ html, body, #map_canvas {
 }
 
 .dlp-box-img{
-    max-height: 300px;
-    max-width: 600px;
+    display: block;
+    max-height: 250px;
+    max-width: 500px;
     opacity: 0.8;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 div.orbit-container

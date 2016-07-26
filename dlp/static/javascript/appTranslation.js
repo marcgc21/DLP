@@ -42,7 +42,8 @@ angular.module('DLPApp').config(['$translateProvider', function ($translateProvi
         'STYLE': 'Style',
         'ADD_CITY': 'Add new city',
         'COORDINATES': 'Coordinates',
-        'INFORMATION_COORD': 'Press the map or left click in the map to get the Coordinates'
+        'INFORMATION_COORD': 'Press the map or left click in the map to get the Coordinates',
+        'ACCESS': 'Access'
     });
 
     $translateProvider.translations('es', {
@@ -85,7 +86,8 @@ angular.module('DLPApp').config(['$translateProvider', function ($translateProvi
         'STYLE': 'Estilo',
         'ADD_CITY': 'Añadir ciudad',
         'COORDINATES': 'Coordinates',
-        'INFORMATION_COORD': 'Presiona o haz clic izquierdo en el mapa para obtener las coordenadas'
+        'INFORMATION_COORD': 'Presiona o haz clic izquierdo en el mapa para obtener las coordenadas',
+        'ACCESS': 'Acceder'
     });
 
     $translateProvider.preferredLanguage('en');

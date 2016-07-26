@@ -2,13 +2,16 @@
  * Created by xavi on 6/06/16.
  */
 var app = angular.module('DLPApp', [
+    'ngTouch',
     'ui.router',
-    'foundation',
+    //'foundation',
     'ngResource',
     'pascalprecht.translate',
     'myServices',
     'uiGmapgoogle-maps',
-    'mm.foundation'
+    //'mm.foundation',
+    //'ngMaterial'
+    'ui.materialize'
 ]);
 app.config(function ($stateProvider, $urlRouterProvider) {
     // For any unmatched url, send to /route1
@@ -52,6 +55,6 @@ app.config(function($resourceProvider) {
   $resourceProvider.defaults.stripTrailingSlashes = false;
 });
 app.run(function($rootScope){
-    $rootScope.$apply($(document).foundation());
+    //$rootScope.$apply($(document).foundation());
 });
 

@@ -1,77 +1,77 @@
-<div ng-controller="WelcomeCntrll">
-    <ul data-orbit class="orbit-ul"
-        data-options="animation:slide;
-                  pause_on_hover:false;
-                  animation_speed:500;
-                  navigation_arrows:false;
-                  bullets:false;
-                  slide_number: true;
-                  next_on_click: true">
-        <li class="orbit-item orbit-item-2">
-        </li>
-        <li class="orbit-item orbit-item-3">
-        </li>
-        <li class="orbit-item orbit-item-1">
-        </li>
-    </ul>
-    <div class="custom-footer">
-        <div style="display: table; width: 100%; text-align: center">
-            <div style="display:table-row;">
-                <div class="centered_table_cell" ng-repeat="logo in logos">
-                    <img ng-src="{{ logo.name }}" class="image-logo" ng-init="logo.name=logo.init" ng-mouseover="logo.name=logo.hover" ng-mouseout="logo.name=logo.init" />
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="centered_class">
-        <div id="main-card" class="dark card">
-            <img class="dlp-box-img" src="static/images/logos/dlp.png">
-            <div class="card-divider">
-                {{ 'WELCOME' | translate }} <b>Drone Logistics Platform</b>
-            </div>
-            <div class="card-section">
-                <div class="grid-block vertical" style="overflow: hidden;">
-                    <div class="grid-block">
-                        <div class="grid-block">
-                            <h4 style="text-align: center; width: 100%; cursor: pointer" ng-click="changeTab()">{{ 'SELECT_CITY' | translate }}</h4>
-                        </div>
-                        <div class="grid-block">
-                            <h4 style="text-align: center; width: 100%; cursor: pointer" ng-click="changeTab()">{{ 'ADD_CITY' | translate }}</h4>
+<main ng-controller="WelcomeCntrll">
+    <!--<ul data-orbit class="orbit-ul"
+            data-options="animation:slide;
+                      pause_on_hover:false;
+                      animation_speed:500;
+                      navigation_arrows:false;
+                      bullets:false;
+                      slide_number: true;
+                      next_on_click: true">
+            <li class="orbit-item orbit-item-2">
+            </li>
+            <li class="orbit-item orbit-item-3">
+            </li>
+            <li class="orbit-item orbit-item-1">
+            </li>
+        </ul>-->
+    <div class="container" style="height: 100%">
+        <div class="row">
+            <div class="col s12 m8 offset-m2">
+                <div id="main-card" class="card large">
+                    <div class="card-image">
+                        <img class="dlp-box-img" src="static/images/logos/dlp.png">
+                    </div>
+                    <div class="card-content">
+                        {{ 'WELCOME' | translate }} <b>Drone Logistics Platform</b>
+                        <div class="row" style="margin-bottom: 0 !important;">
+                            <div class="col s12">
+                                <ul tabs>
+                                    <li class="tab col s6"><a class="active" href="#Select_City_Tab" ng-click="changeTab()">{{ 'SELECT_CITY' | translate }}</a></li>
+                                    <li class="tab col s6"><a href="#Add_City_Tab" ng-click="changeTab()">{{ 'ADD_CITY' | translate }}</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                    <form ng-hide="select">
-                        <div class="row">
-                            <div class="large-12 columns">
-                                <div class="row collapse">
-                                    <div class="small-10 columns">
-                                        <input id="autocomplete_google" type="text" ng-model="city.name" placeholder="Search a city" autocomplete="off" >
-                                    </div>
-                                    <div class="small-2 columns">
-                                        <a ng-click="saveCity()" style="width: 100%" class="button success">Add</a>
-                                    </div>
-                                </div>
-                            </div>
+                    <div id="Add_City_Tab" class="col s12">
+                        <div class="input-field">
+                            <input id="autocomplete_google" type="text" ng-model="city.name" placeholder="Search a city" autocomplete="off" >
+                            <label>{{ 'ADD_CITY' | translate }}</label>
                         </div>
-                    </form>
-                    <form ng-show="select">
-                        <div class="row">
-                            <div class="large-12 columns">
-                                <div class="row collapse">
-                                    <div class="small-10 columns">
-                                        <select style="color: black;" ng-model="place_id">
-                                            <option style="color: black;" ng-repeat="opt in cities_list" ng-value="opt.place_id">{{ opt.name }}</option>
-                                        </select>
-                                    </div>
-                                    <div class="small-2 columns">
-                                        <a ng-click="accessDLP()" style="width: 100%" class="button">Access</a>
-                                    </div>
-                                </div>
-                            </div>
+                    </div>
+                    <div id="Select_City_Tab" class="col s12">
+                        <div ng-show="mobileAndTabletcheck()" input-field>
+                            <select class="browser-default"  ng-model="place.place_id">
+                                <option ng-repeat="opt in cities_list" ng-value="opt.place_id"> {{ opt.name }}</option>
+                            </select>
+                            <label>{{ 'SELECT_CITY' | translate }}</label>
                         </div>
-                    </form>
-                    <alert ng-show="alert.show" type="alert.type" close="closeAlert()">{{ alert.msg | translate }}</alert>
+                        <div ng-hide="mobileAndTabletcheck()" input-field>
+                            <select class=""  ng-model="place.place_id" material-select watch>
+                                <option ng-repeat="opt in cities_list" ng-value="opt.place_id"> {{ opt.name }}</option>
+                            </select>
+                            <label>{{ 'SELECT_CITY' | translate }}</label>
+                        </div>
+                        <!--<alert ng-show="alert.show" type="alert.type" close="closeAlert()">{{ alert.msg | translate }}</alert>-->
+                    </div>
+                    <div class="card-action" style="text-align: right">
+                        <a ng-show="select" href="" ng-click="accessDLP(place_id)">{{ 'ACCESS' | translate }}</a>
+                        <a ng-hide="select" href="" ng-click="saveCity()">{{ 'ACCESS' | translate }}</a>
+                        {{ place_id }}
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</main>
+<footer class="page-footer" style="background-color: whitesmoke;">
+    <div class="container">
+        <div class="row valign-wrapper">
+            <div class="col m2" ng-repeat-start="logo in logos" ng-if="$first">
+                <img ng-src="{{ logo.name }}" class="image-logo" ng-init="logo.name=logo.init" ng-mouseover="logo.name=logo.hover" ng-mouseout="logo.name=logo.init" />
+            </div>
+            <div class="col m2" ng-repeat-end="logo in logos" ng-if="!$first">
+                <img ng-src="{{ logo.name }}" class="image-logo" ng-init="logo.name=logo.init" ng-mouseover="logo.name=logo.hover" ng-mouseout="logo.name=logo.init" />
+            </div>
+        </div>
+    </div>
+</footer>

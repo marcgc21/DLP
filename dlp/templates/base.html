@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <link rel="icon" href="http://static.hubspot.com/favicon.ico">
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key={{ maps_api_key }}&libraries=places&language=en"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+{#    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>#}
 {#    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>#}
 {#    <script async defer#}
 {#      src="https://maps.googleapis.com/maps/api/js?key={{ maps_api_key }}&callback=initMap">#}
@@ -27,32 +31,38 @@
     <script src="{% static 'javascript/Controllers/CreateCityModal.js' %}"></script>
     <script src="{% static 'javascript/Controllers/GalaxyOptCntrll.js' %}"></script>
     <script src="{% static 'javascript/Services/ServiceAPI.js' %}"></script>
-    <script src="{% static 'foundation/js/vendor/jquery.js' %}"></script>
+{#    <script src="{% static 'foundation/js/vendor/jquery.js' %}"></script>#}
 {#    <script src="{% static 'foundation/js/vendor/modernizr.js' %}"></script>#}
-    <script src="{% static 'foundation/js/foundation/foundation.js' %}"></script>
-    <script src="{% static 'foundation/js/foundation/foundation.orbit.js' %}"></script>
-    <script src="{% static 'foundation/js/foundation/foundation.tooltip.js' %}"></script>
-    <script src="{% static 'angular-foundation/mm-foundation-tpls.js' %}"></script>
+{#    <script src="{% static 'foundation/js/foundation/foundation.js' %}"></script>#}
+{#    <script src="{% static 'foundation/js/foundation/foundation.orbit.js' %}"></script>#}
+{#    <script src="{% static 'foundation/js/foundation/foundation.tooltip.js' %}"></script>#}
+{#    <script src="{% static 'angular-foundation/mm-foundation-tpls.js' %}"></script>#}
     <script src="{% static 'angular-translate/angular-translate.js' %}"></script>
     <script src="{% static 'angular-resource/angular-resource.js' %}"></script>
 {#    <script src="{% static 'foundation-apps/js/angular/app.js' %}"></script>#}
-{#    <script src="{% static 'foundation-apps/js/angular/foundation.js' %}"></script>#}
+    <script src="{% static 'angular-touch/angular-touch.min.js' %}"></script>
+    {#    <script src="{% static 'foundation-apps/js/angular/foundation.js' %}"></script>#}
 {#    <script src="{% static 'foundation-apps/js/angular/services/foundation.core.js' %}"></script>#}
     <script src="{% static 'angular-animate/angular-animate.js' %}"></script>
     <script src="{% static 'fastclick/lib/fastclick.js' %}"></script>
-    <script src="{% static 'foundation-apps/dist/js/foundation-apps.js' %}"></script>
-    <script src="{% static 'foundation-apps/dist/js/foundation-apps-templates.js' %}"></script>
+{#    <script src="{% static 'foundation-apps/dist/js/foundation-apps.js' %}"></script>#}
+{#    <script src="{% static 'foundation-apps/dist/js/foundation-apps-templates.js' %}"></script>#}
     <script src="{% static 'lodash/lodash.js' %}"></script>
     <script src="{% static 'angular-simple-logger/dist/angular-simple-logger.js' %}"></script>
     <script src="{% static 'angular-google-maps/dist/angular-google-maps.js' %}"></script>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'materialize/dist/css/materialize.min.css' %}">
+    <script type="text/javascript" src="{% static 'materialize/dist/js/materialize.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'angular-materialize/src/angular-materialize.js' %}"></script>
+{#    <script type="text/javascript" src="{% static 'angular-material/angular-material.js' %}"></script>#}
     <script src="https://use.fontawesome.com/90beeb5512.js"></script>
-    <link rel="stylesheet" href="{% static 'foundation/css/foundation.css' %}">
-    <link rel="stylesheet" href="{% static 'foundation-apps/dist/css/foundation-apps.css' %}">
-    <link rel="stylesheet" href="{% static 'foundation/css/normalize.css' %}">
+{#    <link rel="stylesheet" href="{% static 'foundation/css/foundation.css' %}">#}
+{#    <link rel="stylesheet" href="{% static 'foundation-apps/dist/css/foundation-apps.css' %}">#}
+{#    <link rel="stylesheet" href="{% static 'foundation/css/normalize.css' %}">#}
+{#    <link rel="stylesheet" href="{% static 'angular-material/angular-material.css' %}">#}
     <link rel="stylesheet" href="{% static 'css/app_main.css' %}">
     <title>DLP</title>
 </head>
-<body ng-app="DLPApp">
-    <div ui-view></div>
+<body ng-app="DLPApp" ui-view>
 </body>
 </html>
